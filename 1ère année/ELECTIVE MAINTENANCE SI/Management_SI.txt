@@ -1,0 +1,28 @@
+Type de demande pris en charge :
+
+	- Gestion d'incidents (
+	- Gestion des changements
+	- Gestion des problèmes
+	- Gestion des demandes
+
+Procédure de gestion :
+
+	- Données collectées : Quelles données a-t-on besoin pour identifier le client et procéder à la création du ticket
+
+	- Données produites : Quelles données sont produites pendant la gestion d'un ticket (suivi d'info...)
+
+	- Etapes de traitement : Schéma de traitement des demandes 
+
+	- Escalades (horizontale, verticale) : Décrire les différents types d'escalade
+					       A quel moment est ce qu'on procède à une escalade ? (voir les pratiques l'ITIL)
+
+Escalade Horizontale : Escalade d'un ticket depuis un service vers un autre service ou d'un technicien vers un autre en restant dans le même niveau
+Escalade Verticale : Escalade d'un ticket d'un niveau vers un niveau supérieur lorsque le problème ne peut pas être résolu dans les temps ou alors que l'on a pas les compétences nécessaires à sa résolution
+
+
+Analyse de la couverture par GLPI : quels sont les besoins que nous avons en interne qui sont couverts par GLPI et lesquels ne le sont pas
+(par exemple pas de supervision dans GLPI donc besoin d'un autre outil pour superviser)
+Suite à cette identification basculer sur le fait d'utiliser d'autres outils et les justifier
+
+GLPI couvre la gestion des tickets (création, réalisation...) et l'inventaire des parcs informatiques des clients (suivi du parc et MAJ si besoin)
+Il ne couvre pas nos besoins en supervision. Nous devons donc utiliser un outil de supervision comme centreon et y ajouter un Grafana afin d'avoir des graphes plus lisibles

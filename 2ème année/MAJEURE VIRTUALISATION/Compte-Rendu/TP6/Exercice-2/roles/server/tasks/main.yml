@@ -1,0 +1,27 @@
+---
+
+#- name: Installation du package permettant d'installer le paquet mysql-server
+#  ansible.builtin.apt:
+#    deb: https://dev.mysql.com/get/mysql-apt-config_0.8.22-1_all.deb
+#  become: true
+
+- name: Mise à jour du serveur (apt update)
+  ansible.builtin.apt:
+    update_cache: yes
+  become: true
+
+- name: Installation des paquets nécessaires à Wordpress
+  ansible.builtin.apt:
+    pkg:
+    - apache2
+    - mariadb-server
+    - php-mysql
+    - php
+    - libapache2-mod-php
+    - pip
+  become: true
+
+- name: Installation d'un paquet python (pymysql)
+  ansible.builtin.pip:
+    name: pymysql
+  become: true

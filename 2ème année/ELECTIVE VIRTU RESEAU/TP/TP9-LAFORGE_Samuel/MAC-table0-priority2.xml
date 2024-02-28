@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<flow xmlns="urn:opendaylight:flow:inventory">
+  <strict>false</strict>
+  <id>126</id>
+  <instructions>
+    <instruction>
+      <order>0</order>
+      <apply-actions>
+        <action>
+          <order>0</order>
+          <drop-action/>
+        </action>
+      </apply-actions>
+    </instruction>
+  </instructions>
+  <table_id>0</table_id>
+  <priority>2</priority>
+  <flow-name>BlocageMAC</flow-name>
+  <match>
+    <ethernet-match>
+      <ethernet-source>
+        <address>00:00:00:00:00:04</address>
+      </ethernet-source>    
+    </ethernet-match>
+  </match>
+  <cookie_mask>255</cookie_mask>
+  <installHw>false</installHw>
+  <hard-timeout>1200</hard-timeout>
+  <cookie>3</cookie>
+  <idle-timeout>3400</idle-timeout>
+  <barrier>false</barrier>
+</flow>

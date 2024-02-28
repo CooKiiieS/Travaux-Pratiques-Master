@@ -1,0 +1,30 @@
+Composition de l'équipe :
+
+	10 personnes de base au support (N1 + N2)
+
+Recrutement :
+
+	3 personnes à la supervision
+	3 personnes au support (N1 + N2)
+	2 personnes au support (N3)
+	2 personnes au déploiement
+	
+2 personnes en déploiement : Justifier en donnant le nombre de ticket au support
+							 On a beaucoup trop de ticket à gérer au support tous les jours (pression pour 10 personnes ce qui justifie un recutement) + donner les chiffres
+							 A certaines heures de la journée il n'y a pas 10 personnes dans le CDS donc pression sur les tickets
+							 Avoir des personnes au déploiement va permettre de gérer la croissance du CDS
+				
+Comment on gère la rotation :
+							 
+							 
+N3 : géré par des spécialistes recrutés (N3 système + N3 réseau)
+
+Coûts : Masse salariale (Salaire des employés (seul à calculer))
+		Charges (elec, eau...)
+		Location des locaux
+		Location des équipements (pc...)
+		Mobilier
+		Achat de Serveur + MO + Maintenance
+		MO GLPI + Maintenance
+		Moyen de communication (accès à internet...)
+		

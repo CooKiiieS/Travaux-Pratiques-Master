@@ -1,0 +1,10 @@
+---
+# tasks file for php
+- name: Installation des modules php
+  apt: 
+    name:{{ item }} 
+    state:present
+  become: true
+  with_items:
+  - php-gd
+  - php-ssh2

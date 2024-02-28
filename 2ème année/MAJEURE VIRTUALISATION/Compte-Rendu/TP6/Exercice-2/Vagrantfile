@@ -1,0 +1,47 @@
+NODES = [ 
+	{:hostname => "web", :ip => "192.168.56.2", :cpus => 1, :mem => 2048 }, 
+	{:hostname => "mysql", :ip => "192.168.56.3", :cpus => 1, :mem => 2048 }
+	]
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/debian11"
+  NODES.each do |node|
+	config.vm.define node[:hostname] do |cfg|
+		cfg.vm.hostname = node[:hostname]
+		cfg.vm.network "private_network", ip: node[:ip]
+			cfg.vm.provider "virtualbox" do |v|
+				v.customize ["modifyvm", :id, "--cpus", node[:cpus] ]
+				v.customize ["modifyvm", :id, "--memory", node[:mem] ]
+				v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+				v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+				v.customize ["modifyvm", :id, "--name", node[:hostname] ]
+			end
+		end
+	end
+
+    config.vm.define "web" do |web|
+
+        web.vm.provision "shell", inline: <<-SHELL
+        sudo apt update -y
+        sudo apt install ansible -y
+        SHELL
+
+		web.vm.provision "ansible" do |ansible|
+#			ansible.verbose = "v"
+			ansible.playbook = "playbook-web.yml"
+		end
+    end
+
+    config.vm.define "mysql" do |mysql|
+
+        mysql.vm.provision "shell", inline: <<-SHELL
+        sudo apt update -y
+        sudo apt install ansible -y
+        SHELL
+
+		mysql.vm.provision "ansible" do |ansible|
+#			ansible.verbose = "v"
+			ansible.playbook = "playbook-bdd.yml"
+		end
+	end
+end

@@ -1,0 +1,55 @@
+Sous Windows :
+
+Désactiver le Pare-Feu en CLI :
+
+  netsh advfirewall set allprofiles state off 
+
+
+/!\ Désactiver le Pare-Feu public en graphique si possible
+
+
+Voir sa config réseau actuelle :
+ 
+  ipconfig
+
+
+
+Sous Linux :
+
+Pour la machine RockyLinux :
+
+
+activer la carte réseau :
+
+  ifup [interface]
+
+Modification du DNS dans /etc/resolve.conf si besoin 
+
+Enregistrement des interfaces sous Rocky :
+
+  nmtui
+
+
+Configuration de l'IP de façon statique dans le fichier /etc/sysconfig/networks....
+
+	nano le fichier
+
+
+
+Voir la config réseau actuelle :
+
+  ip a s
+
+
+Ajouter une IP à la machine :
+
+  ip a a [ip/subnet] dev [interface]
+
+
+
+Ajouter une route à la machine :
+
+  ip r a default via [gateway] dev [interface]
+
+
+  

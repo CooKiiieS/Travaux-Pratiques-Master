@@ -1,0 +1,4 @@
+---
+# vars file for server
+
+packages: ['apache2', 'mysql-server', 'php7.2-mysql', 'php7.2', 'libapache2-mod-php7.2', 'pip', 'python3-mysqldb', 'python3-pymysql']
